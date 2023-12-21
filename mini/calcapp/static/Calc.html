@@ -1,0 +1,75 @@
+
+<html>
+<head>
+
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="text"> 
+        <h1 align="center"> <b>  CALCULATOR  </b></h1>
+        <br>
+       
+        <h2 align="center">RAJAGOPAL (23002920)</h2>
+    </div>
+    <div class="container"> 
+        <div class="calculator">
+            <input type ="text" placeholder="0" id="output-screen">
+            <button onclick="Clear()">AC</button>
+            <button onclick="Del()">DEL</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+           <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+
+            <button onclick="calculate()" class="equal">=</button>
+
+
+        </div>
+
+    </div>
+   
+
+    <script>
+        let outputScreen = document.getElementById("output-screen");
+
+        function display(num){
+            outputScreen.value += num;
+        }
+        function calculate()
+     {
+            try{
+                outputScreen.value = eval(outputScreen.value);
+  }
+            catch(err)
+            {
+                alert("invaild ")
+            }
+     }
+        
+            function Clear(){
+                outputScreen.value ="";
+            }
+        
+        function Del(){
+            outputScreen.value = outputScreen.value.slice(0,-1);
+        }
+    
+        
+    </script>
+    
+</body>
+</html>
